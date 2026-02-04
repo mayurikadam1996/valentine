@@ -19,17 +19,10 @@
       padding: 40px;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      position: relative;
-      width: 320px;
     }
 
     h1 {
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 18px;
-      margin: 10px 0;
+      margin-bottom: 30px;
     }
 
     button {
@@ -51,41 +44,20 @@
       color: white;
       position: absolute;
     }
-
-    img {
-      width: 150px;
-      margin-top: 20px;
-      display: none;
-    }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <div class="container" id="box">
     <h1 id="question">Will you be my Valentine? ❤️</h1>
-
-    <div id="buttons">
-      <button id="yes">Yes</button>
-      <button id="no">No</button>
-    </div>
-
-    <div id="result" style="display:none;">
-      <p>No refunds, no takebacks, just us now ❤️</p>
-      <p>And just like that… my heart did a happy dance 💃</p>
-
-      <img
-        src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
-        alt="Dancing girl"
-      />
-    </div>
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
   </div>
 
   <script>
     const noBtn = document.getElementById("no");
     const yesBtn = document.getElementById("yes");
-    const buttons = document.getElementById("buttons");
-    const result = document.getElementById("result");
-    const img = result.querySelector("img");
+    const question = document.getElementById("question");
 
     noBtn.addEventListener("mouseover", () => {
       const x = Math.random() * (window.innerWidth - 100);
@@ -95,9 +67,9 @@
     });
 
     yesBtn.addEventListener("click", () => {
-      buttons.style.display = "none";
-      result.style.display = "block";
-      img.style.display = "block";
+      question.innerText = "I knew it already.........No refunds, no takebacks, just us now ❤️💕";
+      noBtn.style.display = "none";
+      yesBtn.style.display = "none";
     });
   </script>
 
